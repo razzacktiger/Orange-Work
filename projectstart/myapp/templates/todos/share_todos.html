@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<form action="/todoslist/share/{{todo_to_share.id}}" method="POST">
+    <div>
+        {{ form.hidden_tag() }}
+        <p>
+            <b>{{ form.username.label }}</b> <br>
+            {{ form.username(size=32, class="form-control", 
+            style="background-color: darkslategray; color: whitesmoke;") }}
+        </p>
+        <a href="/todoslist/share/{{note_to_share.id}}">
+            <button type="submit" 
+            class="btn btn-primary" 
+            style="background-color: darkslategray;">
+            Share
+            </button>
+        </a>
+        <button type="submit"><a href="/todoslist/share/{{todo_to_share.id}}"></a>Share</button>
+    </div>
+  </form>
+ 
+{% endblock %}
