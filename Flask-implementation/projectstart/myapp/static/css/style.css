@@ -1,0 +1,29 @@
+h1{
+	font-family: Arial, "Helvetica Neue", Helvetic, sans-serif;
+	font-size:40px;
+	margin-left:0px;
+
+	color:#393740;
+	text-align: left;
+	line-height: 1.0;
+}
+
+
+
+/*img{
+	width: 300px;
+	
+}*/
+
+input{
+	margin-left: 600px;
+	margin-top: 10px;
+}
+
+.Orange{
+	width: 300px;
+}
+
+.UseCases{
+	width: 100%;
+}

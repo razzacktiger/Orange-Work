@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <h1>{% block title %} Welcome to Flash cards {% endblock %}</h1>
+
+    <div class="col-12">
+      <a href='/flashcardslist/add'>
+        <button type="button" 
+          class="btn btn-primary" 
+          style="background-color: darkslategray;">
+          Add Flashcard
+        </button>
+      </a>
+    </div>
+      
+
+    <form action="" method="GET" novalidate>
+      <ul class="list-group list-group-flush" id="flashcards">
+      </p>
+      {% for flashcards in flashcardslist %}
+      <div class="col-12">
+          <li class="list-group-item">
+            <div class='id'><p class='fs-4'> <b>{{flashcards.id}} </b>|  {{flashcards.question}}</div></p>
+              <a href='/flashcardslist/delete/{{ flashcards.id }}'>
+                <button type="button" 
+                class="btn btn-primary" 
+                href='/flashcardslist/delete/{{ flashcards.id }}'
+                style="background-color: darkslategray;">
+                  Delete
+                </button>
+                </a>
+                <p></p>
+            <a href='/flashcardslist/preview/{{ flashcards.id }}'>
+              <button type="button" 
+              class="btn btn-primary" 
+              style="background-color: darkslategray;">
+                The Answer
+              </button>
+            </a>
+            <p>
+              <br>
+            <a href='/flashcardslist/update/{{ flashcards.id }}'>
+              <button type="button" 
+              class="btn btn-primary" 
+              style="background-color: darkslategray;">
+                Edit Flashcard 
+              </button>
+            </a>
+            <a href='/flashcardslist/share/{{ flashcards.id }}'>
+              <button type="button" 
+              class="btn btn-primary" 
+              style="background-color: darkslategray;">
+                Share Flashcard 
+              </button>
+            </a>
+            {% if flashcards.shared %}
+            {% if flashcards.owner == user.username %}
+            <a href='/flashcardslist/unshare/{{ flashcards.id }}'>
+              <button type="button" 
+              class="btn btn-primary" 
+              style="background-color: darkslategray;">
+                UnShare Flashcard 
+              </button>
+            </a>
+              {% endif %}
+              <p> <b>Shared: </b>| {{ flashcards.shared }}</p>
+              <p> <b>Shared with: </b>| {{ flashcards.users }}</p>
+              {% endif %}
+              <p> <b>Owner: </b>| {{ flashcards.owner }}</p>
+            </form>
+            </li>
+            {% endfor %}
+          </ul>
+    </form>
+{% endblock %}

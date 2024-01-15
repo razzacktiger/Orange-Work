@@ -1,0 +1,11 @@
+flask
+flask-wtf
+wtforms
+email-validator
+flask-markdown
+markdown
+flask-login
+flask-sqlalchemy
+werkzeug
+datetime
+mkdocs
