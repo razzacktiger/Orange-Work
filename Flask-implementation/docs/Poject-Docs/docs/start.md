@@ -17,7 +17,7 @@
 
 ## OR use requirements.txt:
 
-- `pip` install -r requirements.txt - install all libraries at once
+- `pip install -r requirements.txt`` - install all libraries at once
 
 # Initialize Database File
 
